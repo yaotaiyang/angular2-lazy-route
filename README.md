@@ -2,7 +2,7 @@
 
 angular2+webpack+gulp+lazyRoute单页移动开发demo
 
-`根据页面按需加载js`，整体打包工程，包括webpack组件打包，gulp文件处理。angular2项目脚手架。
+基于`angular2` 正式版,`根据页面按需加载js`，整体打包工程，包括webpack组件打包，gulp文件处理。angular2项目脚手架。
 
 
 1.需要全局node。
