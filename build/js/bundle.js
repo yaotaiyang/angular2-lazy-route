@@ -1,4 +1,4 @@
-webpackJsonp([2],{
+webpackJsonp([3],{
 
 /***/ 466:
 /***/ function(module, exports, __webpack_require__) {
@@ -6,46 +6,13 @@ webpackJsonp([2],{
 "use strict";
 "use strict";
 
-__webpack_require__(631);
-__webpack_require__(569);
-__webpack_require__(570);
+__webpack_require__(634);
+__webpack_require__(571);
+__webpack_require__(572);
 __webpack_require__(210);
 const platform_browser_dynamic_1 = __webpack_require__(209);
-const module_1 = __webpack_require__(567);
+const module_1 = __webpack_require__(569);
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(module_1.MainModule);
-
-/***/ },
-
-/***/ 567:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-
-const core_1 = __webpack_require__(1);
-const platform_browser_1 = __webpack_require__(273);
-const routing_1 = __webpack_require__(568);
-let MainAppComponent = class MainAppComponent {};
-MainAppComponent = __decorate([core_1.Component({
-    selector: 'my-app',
-    template: `
-  <div>
-    <h3>Angular2 Lazy Module Loading Demo</h3>
-    <hr>
-    <a routerLink="/">首页</a> |
-    <a routerLink="/sub">sub页</a>
-    <br />
-    <router-outlet></router-outlet>
-  </div>
-  `
-}), __metadata('design:paramtypes', [])], MainAppComponent);
-let MainModule = class MainModule {};
-MainModule = __decorate([core_1.NgModule({
-    imports: [platform_browser_1.BrowserModule, routing_1.routing],
-    declarations: [MainAppComponent],
-    bootstrap: [MainAppComponent]
-}), __metadata('design:paramtypes', [])], MainModule);
-exports.MainModule = MainModule;
 
 /***/ },
 
@@ -55,13 +22,63 @@ exports.MainModule = MainModule;
 "use strict";
 "use strict";
 
-const router_1 = __webpack_require__(126);
-exports.appRoutes = [{ path: "", loadChildren: () => __webpack_require__(611)("SubModule") }, { path: "sub", loadChildren: () => __webpack_require__(612)("SubModule") }];
-exports.routing = router_1.RouterModule.forRoot(exports.appRoutes, { useHash: true });
+const core_1 = __webpack_require__(1);
+let Menu = class Menu {};
+Menu = __decorate([core_1.Component({
+    selector: 'menu',
+    template: `<div class="weui_tabbar">
+    <a class="weui_tabbar_item" routerLink="/"><div class="weui_tabbar_icon"><img src="/images/icon_nav_button.png"></div><p class="weui_tabbar_label">首页</p></a>
+    <a class="weui_tabbar_item" routerLink="/sub"><div class="weui_tabbar_icon"><img src="/images/icon_nav_msg.png"></div><p class="weui_tabbar_label">列表</p></a>
+    <a class="weui_tabbar_item" routerLink="/me"><div class="weui_tabbar_icon"><img src="/images/icon_nav_article.png"></div><p class="weui_tabbar_label">我</p></a></div>`
+}), __metadata('design:paramtypes', [])], Menu);
+exports.Menu = Menu;
 
 /***/ },
 
 /***/ 569:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+
+const core_1 = __webpack_require__(1);
+const platform_browser_1 = __webpack_require__(273);
+const routing_1 = __webpack_require__(570);
+const Menu_1 = __webpack_require__(568);
+let MainAppComponent = class MainAppComponent {};
+MainAppComponent = __decorate([core_1.Component({
+    selector: 'my-app',
+    template: `
+  <div>
+   <title>angular2首页</title>
+    <menu></menu>
+    <router-outlet></router-outlet>
+  </div>
+  `
+}), __metadata('design:paramtypes', [])], MainAppComponent);
+let MainModule = class MainModule {};
+MainModule = __decorate([core_1.NgModule({
+    imports: [platform_browser_1.BrowserModule, routing_1.routing],
+    declarations: [MainAppComponent, Menu_1.Menu],
+    bootstrap: [MainAppComponent]
+}), __metadata('design:paramtypes', [])], MainModule);
+exports.MainModule = MainModule;
+
+/***/ },
+
+/***/ 570:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+
+const router_1 = __webpack_require__(126);
+exports.appRoutes = [{ path: "", loadChildren: () => __webpack_require__(613)("SubModule") }, { path: "sub", loadChildren: () => __webpack_require__(615)("SubModule") }, { path: "me", loadChildren: () => __webpack_require__(614)("SubModule") }];
+exports.routing = router_1.RouterModule.forRoot(exports.appRoutes, { useHash: true });
+
+/***/ },
+
+/***/ 571:
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(430);
@@ -205,7 +222,7 @@ module.exports = __webpack_require__(35);
 
 /***/ },
 
-/***/ 570:
+/***/ 572:
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(443);
@@ -222,12 +239,12 @@ module.exports = __webpack_require__(35).Reflect;
 
 /***/ },
 
-/***/ 611:
+/***/ 613:
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = function (namespace) {
   return new Promise(function (resolve) {
-    __webpack_require__.e/* nsure */(1).catch(function(err) { __webpack_require__.oe(err); }).then((function (require) {
+    __webpack_require__.e/* nsure */(2).catch(function(err) { __webpack_require__.oe(err); }).then((function (require) {
       if (namespace) {
         resolve(__webpack_require__(468)[namespace]);
       } else {
@@ -240,12 +257,12 @@ module.exports = function (namespace) {
 
 /***/ },
 
-/***/ 612:
+/***/ 614:
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = function (namespace) {
   return new Promise(function (resolve) {
-    __webpack_require__.e/* nsure */(0).catch(function(err) { __webpack_require__.oe(err); }).then((function (require) {
+    __webpack_require__.e/* nsure */(1).catch(function(err) { __webpack_require__.oe(err); }).then((function (require) {
       if (namespace) {
         resolve(__webpack_require__(469)[namespace]);
       } else {
@@ -258,7 +275,25 @@ module.exports = function (namespace) {
 
 /***/ },
 
-/***/ 631:
+/***/ 615:
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = function (namespace) {
+  return new Promise(function (resolve) {
+    __webpack_require__.e/* nsure */(0).catch(function(err) { __webpack_require__.oe(err); }).then((function (require) {
+      if (namespace) {
+        resolve(__webpack_require__(470)[namespace]);
+      } else {
+        var mod = __webpack_require__(470);
+        resolve(mod.__esModule ? mod.default : mod)
+      }
+    }).bind(null, __webpack_require__));
+  });
+}
+
+/***/ },
+
+/***/ 634:
 /***/ function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {function __assignFn(t) {
@@ -329,7 +364,7 @@ function __awaiterFn(thisArg, _arguments, P, generator) {
 
 /***/ },
 
-/***/ 632:
+/***/ 635:
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(466);
@@ -337,5 +372,5 @@ module.exports = __webpack_require__(466);
 
 /***/ }
 
-},[632]);
+},[635]);
 //# sourceMappingURL=bundle.js.map
