@@ -8,7 +8,6 @@ var gulp = require('gulp'),
     config = require('./config');
 
 gulp.task('webpack', function () {
-    console.log(gulp.env);
     if(gulp.env.dev){
         return gulp.src(config.PATH.appEnter)
             .pipe($.webpack(require('./webpack.config.dev.js'), webpack))

@@ -1,11 +1,11 @@
 import { Component } from "@angular/core";
 
 @Component({
-  selector: "sub-home",
+  selector: "page-sub",
   template: `
-    <h2>Sub App</h2>
+    <h2>二级列表页</h2>
     <router-outlet></router-outlet>
   `
 })
-export class SubComponent {
+export class PageComponent {
 }

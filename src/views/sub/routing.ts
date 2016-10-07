@@ -1,11 +1,11 @@
 import { Routes, RouterModule } from "@angular/router";
-import { SubComponent } from "./sub.component";
+import { PageComponent } from "./component";
 //import { SubHomeComponent } from "./sub-home.component";
 
 export const subRoutes: Routes = [
   {
     path: "",
-    component: SubComponent,
+    component: PageComponent,
     children: [
       //{ path: "", component: SubHomeComponent }
     ]

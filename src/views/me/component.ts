@@ -1,11 +1,11 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: "home",
+    selector: "page-me",
     template: `
-    <h2>Home</h2>
+    <h2>关于我页面</h2>
     <router-outlet></router-outlet>
   `
 })
-export class HomeComponent {
+export class PageComponent {
 }
