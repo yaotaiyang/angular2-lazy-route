@@ -21,6 +21,7 @@ import {Http, Response} from '@angular/http';
 export class PageComponent {
     data: Object;
     loading: boolean;
+    list:Object;
     constructor(public http: Http) {
         this.makeRequest();
     }
@@ -28,8 +29,8 @@ export class PageComponent {
         this.loading = true;
         this.http.get('data.json')
             .subscribe((res: Response) => {
-                this.data = JSON.parse(res._body);
-                this.list = this.data.list;
+                console.log(res);
+                this.list = [{"title":"xxxx"},{"title":"xxxxx1111"},{"title":"sdfsafasfsaf"}];
                 this.loading = false;
             });
     }
