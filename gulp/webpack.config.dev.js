@@ -4,7 +4,7 @@ const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin
 
 module.exports = {
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.js','.less']
     },
     module: {
         loaders: [
@@ -14,8 +14,8 @@ module.exports = {
                 exclude: /node_modules/
             },
             {test: /\.html$/,loader: ['raw']},
-            {test:/\.css$/, loader:"style-loader!css-loader"},
-            {test: /\.less$/, loader: "style!css!less"}
+            {test:/\.css$/, loader:"raw"},
+            {test: /\.less$/, loader: "raw!less"}
         ],
         noParse: [
             path.join(__dirname, "node_modules/zone.js/dist")
