@@ -11,11 +11,14 @@ angular2+webpack+gulp+lazyRoute单页移动开发demo
 2.执行
 `npm install`
 
-
 3.根目录执行
-`gulp --dev`
+`gulp`  //上线模式，拷贝代码，执行图片压缩等等，如果需要上线，执行该命令相当于生成最终的代码。平时开发，先执行该命令，该命令时间比较久，再执行`gulp --dev`
 
-4.访问localhost:9900
+
+4.根目录执行
+`gulp --dev`  //开发模式，速度更快
+
+5.访问localhost:9900
 
 ![001](001.png?v=1)
 ![002](002.png?v=1)
