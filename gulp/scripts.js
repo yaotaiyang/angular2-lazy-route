@@ -7,8 +7,14 @@ var gulp = require('gulp'),
     config = require('./config');
 
 //JS检测任务
-gulp.task('jshint', function () {
+/*gulp.task('jshint', function () {
     return gulp.src(config.PATH.JS)
         .pipe($.jshint())
         .pipe($.jshint.reporter('jshint-stylish'));
+});*/
+gulp.task('jsMini', function () {
+    //return;
+    return gulp.src(config.PATH.jsMini)
+       // .pipe($.uglify())
+        .pipe(gulp.dest('build/js'))
 });

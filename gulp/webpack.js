@@ -12,6 +12,10 @@ gulp.task('webpack', function () {
         return gulp.src(config.PATH.appEnter)
             .pipe($.webpack(require('./webpack.config.dev.js'), webpack))
             .pipe(gulp.dest(config.PATH.appOut));
+    }else{
+        return gulp.src(config.PATH.appEnter)
+            .pipe($.webpack(require('./webpack.config.js'), webpack))
+            .pipe(gulp.dest(config.PATH.appOut));
     }
 
 });

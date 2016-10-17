@@ -7,7 +7,7 @@ wrench.readdirSyncRecursive('./gulp').filter(function (file) {
     require('./gulp/' + file);
 });
 var arrtask = ['connect', 'webpack', 'watch'];
-
-//arrtask = arrtask.concat(["copy","imageMin","jshint","usemin"]);
-arrtask = arrtask.concat(["copy","usemin"]);
+if(!gulp.env.dev){
+    arrtask = arrtask.concat(["copy","imageMin","usemin","jsMini"]);
+}
 gulp.task('default', arrtask);

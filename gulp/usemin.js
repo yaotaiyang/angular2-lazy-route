@@ -15,6 +15,5 @@ gulp.task('usemin', function() {
         .pipe($.usemin())
         .pipe(rev({root:"build"}))
         .pipe(gulp.dest('build/'));
-
     return;
 });

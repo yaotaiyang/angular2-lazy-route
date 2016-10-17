@@ -5,14 +5,14 @@ webpackJsonp([3],{
 
 "use strict";
 "use strict";
-
 __webpack_require__(634);
 __webpack_require__(571);
 __webpack_require__(572);
 __webpack_require__(210);
-const platform_browser_dynamic_1 = __webpack_require__(209);
-const module_1 = __webpack_require__(569);
+var platform_browser_dynamic_1 = __webpack_require__(209);
+var module_1 = __webpack_require__(569);
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(module_1.MainModule);
+
 
 /***/ },
 
@@ -21,17 +21,30 @@ platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(module_1.Mai
 
 "use strict";
 "use strict";
-
-const core_1 = __webpack_require__(1);
-let Menu = class Menu {};
-Menu = __decorate([core_1.Component({
-    selector: 'menu',
-    template: `<div class="weui_tabbar">
-    <a class="weui_tabbar_item" routerLink="/"><div class="weui_tabbar_icon"><img src="/images/icon_nav_button.png"></div><p class="weui_tabbar_label">首页</p></a>
-    <a class="weui_tabbar_item" routerLink="/sub"><div class="weui_tabbar_icon"><img src="/images/icon_nav_msg.png"></div><p class="weui_tabbar_label">列表</p></a>
-    <a class="weui_tabbar_item" routerLink="/me"><div class="weui_tabbar_icon"><img src="/images/icon_nav_article.png"></div><p class="weui_tabbar_label">我</p></a></div>`
-}), __metadata('design:paramtypes', [])], Menu);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var Menu = (function () {
+    function Menu() {
+    }
+    Menu = __decorate([
+        core_1.Component({
+            selector: 'menu',
+            template: "<div class=\"weui_tabbar\">\n    <a class=\"weui_tabbar_item\" routerLink=\"/\"><div class=\"weui_tabbar_icon\"><img src=\"/images/icon_nav_button.png\"></div><p class=\"weui_tabbar_label\">\u9996\u9875</p></a>\n    <a class=\"weui_tabbar_item\" routerLink=\"/sub\"><div class=\"weui_tabbar_icon\"><img src=\"/images/icon_nav_msg.png\"></div><p class=\"weui_tabbar_label\">\u5217\u8868</p></a>\n    <a class=\"weui_tabbar_item\" routerLink=\"/me\"><div class=\"weui_tabbar_icon\"><img src=\"/images/icon_nav_article.png\"></div><p class=\"weui_tabbar_label\">\u6211</p></a></div>"
+        }), 
+        __metadata('design:paramtypes', [])
+    ], Menu);
+    return Menu;
+}());
 exports.Menu = Menu;
+
 
 /***/ },
 
@@ -40,29 +53,49 @@ exports.Menu = Menu;
 
 "use strict";
 "use strict";
-
-const core_1 = __webpack_require__(1);
-const platform_browser_1 = __webpack_require__(211);
-const routing_1 = __webpack_require__(570);
-const Menu_1 = __webpack_require__(568);
-let MainAppComponent = class MainAppComponent {};
-MainAppComponent = __decorate([core_1.Component({
-    selector: 'my-app',
-    template: `
-  <div>
-   <title>angular2首页</title>
-    <menu></menu>
-    <router-outlet></router-outlet>
-  </div>
-  `
-}), __metadata('design:paramtypes', [])], MainAppComponent);
-let MainModule = class MainModule {};
-MainModule = __decorate([core_1.NgModule({
-    imports: [platform_browser_1.BrowserModule, routing_1.routing],
-    declarations: [MainAppComponent, Menu_1.Menu],
-    bootstrap: [MainAppComponent]
-}), __metadata('design:paramtypes', [])], MainModule);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var platform_browser_1 = __webpack_require__(211);
+var routing_1 = __webpack_require__(570);
+var Menu_1 = __webpack_require__(568);
+var MainAppComponent = (function () {
+    function MainAppComponent() {
+    }
+    MainAppComponent = __decorate([
+        core_1.Component({
+            selector: 'my-app',
+            template: "\n  <div>\n   <title>angular2\u9996\u9875</title>\n    <menu></menu>\n    <router-outlet></router-outlet>\n  </div>\n  ",
+        }), 
+        __metadata('design:paramtypes', [])
+    ], MainAppComponent);
+    return MainAppComponent;
+}());
+var MainModule = (function () {
+    function MainModule() {
+    }
+    MainModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                platform_browser_1.BrowserModule,
+                routing_1.routing,
+            ],
+            declarations: [MainAppComponent, Menu_1.Menu],
+            bootstrap: [MainAppComponent],
+        }), 
+        __metadata('design:paramtypes', [])
+    ], MainModule);
+    return MainModule;
+}());
 exports.MainModule = MainModule;
+
 
 /***/ },
 
@@ -71,10 +104,14 @@ exports.MainModule = MainModule;
 
 "use strict";
 "use strict";
-
-const router_1 = __webpack_require__(126);
-exports.appRoutes = [{ path: "", loadChildren: () => __webpack_require__(613)("SubModule") }, { path: "sub", loadChildren: () => __webpack_require__(615)("SubModule") }, { path: "me", loadChildren: () => __webpack_require__(614)("SubModule") }];
+var router_1 = __webpack_require__(126);
+exports.appRoutes = [
+    { path: "", loadChildren: function () { return __webpack_require__(613)("SubModule"); } },
+    { path: "sub", loadChildren: function () { return __webpack_require__(615)("SubModule"); } },
+    { path: "me", loadChildren: function () { return __webpack_require__(614)("SubModule"); } },
+];
 exports.routing = router_1.RouterModule.forRoot(exports.appRoutes, { useHash: true });
+
 
 /***/ },
 

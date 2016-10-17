@@ -6,6 +6,7 @@ module.exports = {
     PATH: {
         'build': 'build',  //构建目录
         'JS': ['src/*.js', 'src/**/*.js', 'src/**/**/*.js', 'src/**/**/**/*.js'],
+        'jsMini':['build/js/*.js'],
         'index': './src/index.html',
         'appEnter': './src/module/app.js',
         'appOut': 'build/js',

@@ -1,52 +1,47 @@
-var webpack = require('webpack');
-process.env.NODE_ENV = 'production';
+const webpack = require("webpack");
+const path = require("path");
+const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+
 module.exports = {
+    resolve: {
+        extensions: ['.ts', '.js']
+    },
+    module: {
+        loaders: [
+            {
+                test: /\.ts$/,
+                loader: ["awesome-typescript-loader", "angular2-load-children-loader"],
+                exclude: /node_modules/
+            },
+            {test: /\.html$/,loader: ['raw']},
+            {test:/\.css$/, loader:"style-loader!css-loader"},
+            {test: /\.less$/, loader: "style!css!less"}
+        ],
+        noParse: [
+            path.join(__dirname, "node_modules/zone.js/dist")
+        ]
+    },
     entry: {
-        index: ['./src/index.js'],
-        vendors: [ 'babel-polyfill', 'zone.js/dist/zone', '@angular/core', '@angular/platform-browser-dynamic', '@angular/common', '@angular/router']
+        bundle: ['./src/index.ts'],
+        vendors: ['babel-polyfill', 'zone.js/dist/zone', '@angular/core', '@angular/platform-browser-dynamic', '@angular/common', '@angular/router']
     },
     output: {
         path: __dirname + '/build/js',
-        filename: 'bundle.js',
+        filename: '[name].js',
         chunkFilename: "[name].min.js?ver=[chunkhash:8]",
         publicPath: '/js/'
     },
-    /* resolve: {
-     root: __dirname + '/src/app/',
-     },*/
     watch: true,
-    module: {
-        noParse: [],
-        loaders: [
-            {test: /\.js$/,
-                loader: 'babel',
-                query: {
-                    plugins: ['angular2-annotations','babel-plugin-transform-decorators-legacy'],
-                    presets: ['es2015', 'angular2','stage-0']
-                },
-                exclude: /node_modules/
-            },
-            {test: /\.html$/,loader: 'raw'},
-            {test:/\.css$/, loader: ["style-loader", "css-loader"]},
-            {test: /\.less$/, loader: "style!css!less"}
-        ]
-    },
     devtool: 'source-map',
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({name:'vendors',filename: 'vendors.js'}),//分离库
-        //new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify('production')
-            }
-        }),
+        new webpack.optimize.CommonsChunkPlugin({name:'vendors',filename:'vendors.js'}),//分离库
         new webpack.optimize.UglifyJsPlugin({
             compress:{
                 warnings:false,
-                //drop_console:true,
-                //drop_debugger:true
+                drop_console:true,
+                drop_debugger:true
             }
         }),
-        new webpack.NoErrorsPlugin()
+        new ForkCheckerPlugin()
     ]
 };
