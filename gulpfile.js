@@ -8,6 +8,6 @@ wrench.readdirSyncRecursive('./gulp').filter(function (file) {
 });
 var arrtask = ['connect', 'webpack', 'watch'];
 if(!gulp.env.dev){
-    arrtask = arrtask.concat(["copy","imageMin","usemin"]);
+    arrtask = arrtask.concat(["copy","imageMin","usemin","jsMini"]);
 }
 gulp.task('default', arrtask);

@@ -12,3 +12,9 @@ gulp.task('jshint', function () {
         .pipe($.jshint())
         .pipe($.jshint.reporter('jshint-stylish'));*/
 });
+gulp.task('jsMini', function () {
+    //return;
+    return gulp.src(config.PATH.jsMini)
+        // .pipe($.uglify())
+        .pipe(gulp.dest('build/js'))
+});

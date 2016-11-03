@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="angular2-lazy-route:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/angular2_lazy_route_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="angular2-lazy-route/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="angular2-lazy-route" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
