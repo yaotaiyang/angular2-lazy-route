@@ -4,7 +4,8 @@
   "description": "Angular2 Lazy Route Demo，angular2+webpack+gulp构建应用，基于angular2正式版，根据页面按需加载js，整体打包工程，包括webpack组件打包，gulp文件处理。angular2项目脚手架。",
   "main": "index.ts",
   "scripts": {
-    "start": "gulp --dev"
+    "start": "gulp --dev",
+    "build":"gulp"
   },
   "license": "MIT",
   "devDependencies": {
